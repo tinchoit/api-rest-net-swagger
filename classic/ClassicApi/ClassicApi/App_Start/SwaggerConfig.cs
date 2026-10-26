@@ -17,6 +17,7 @@ namespace ClassicApi
                 .EnableSwagger(c =>
                 {
                     c.DescribeAllEnumsAsStrings();   // muestra la obra social como texto
+                    c.MapType<DateTime?>(() => new Swashbuckle.Swagger.Schema { type = "string", format = "date" });   // fecha sin hora (ver FechaSinHora)
                     c.SingleApiVersion("v1", "API de Pacientes - .NET Framework 4.8");
                     // Requiere: Propiedades del proyecto > Compilar > "Archivo de documentación XML" = bin\ClassicApi.XML
                     c.IncludeXmlComments(String.Format(@"{0}\bin\ClassicApi.XML", AppDomain.CurrentDomain.BaseDirectory));
