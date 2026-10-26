@@ -14,6 +14,7 @@ builder.Services.AddOpenApi(opciones =>
 {
     opciones.AddSchemaTransformer(EnumComoTexto.DescribirEnOpenApi);
     opciones.AddSchemaTransformer(CamposObligatorios.DescribirEnOpenApi);
+    opciones.AddSchemaTransformer(EjemploPaciente.DescribirEnOpenApi);
 
     // Datos generales del contrato OpenAPI
     opciones.AddDocumentTransformer((documento, contexto, cancelacion) =>
